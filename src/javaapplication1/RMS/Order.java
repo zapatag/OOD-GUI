@@ -9,7 +9,7 @@ public class Order {
 	private List<FoodItem> foodItem = new ArrayList<FoodItem>();
 	float totalCost;
 	private boolean isComplete;
-	int tableNum;
+	Table table;
 
 	public Order(){
 
@@ -45,6 +45,10 @@ public class Order {
 	}
 
 	void setTable(int tableNum){
-		this.tableNum = tableNum;
+		table = new Table(tableNum);
+	}
+
+	int getTable(){
+		return table.getTableNum();
 	}
 }

@@ -14,7 +14,7 @@ public class HandheldDevice {
 	}
 
 	private void createTable(int tableNum){
-		Table table = new Table(tableNum);
+		this.order.setTable(tableNum);
 	}
 
 	public void openOrderTicket(int tableNum){

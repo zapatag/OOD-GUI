@@ -31,6 +31,16 @@ public class SelectStuffFrame extends javax.swing.JFrame {
 
 	}
 
+	private void table02MouseClicked(MouseEvent e) {
+		selectedTable = 2;
+		textField1.setText("Table " + selectedTable);
+	}
+
+	private void table03MouseClicked(MouseEvent e) {
+		selectedTable = 3;
+		textField1.setText("Table " + selectedTable);
+	}
+
     SelectStuffFrame(HandheldDevice handheldDevice) {
 	    this.handheldDevice = handheldDevice;
         initComponents();
@@ -65,6 +75,7 @@ public class SelectStuffFrame extends javax.swing.JFrame {
 		table16 = new JLabel();
 		table17 = new JLabel();
 		backButton = new JButton();
+		textField1 = new JTextField();
 
 		//======== this ========
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -76,13 +87,13 @@ public class SelectStuffFrame extends javax.swing.JFrame {
 
 		//======== tablePanel ========
 		{
-			tablePanel.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new
-			javax. swing. border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax
-			. swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java
-			.awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt
-			. Color. red) ,tablePanel. getBorder( )) ); tablePanel. addPropertyChangeListener (new java. beans.
-			PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r" .
-			equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
+			tablePanel.setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax
+			.swing.border.EmptyBorder(0,0,0,0), "JFor\u006dDesi\u0067ner \u0045valu\u0061tion",javax.swing
+			.border.TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM,new java.awt.
+			Font("Dia\u006cog",java.awt.Font.BOLD,12),java.awt.Color.red
+			),tablePanel. getBorder()));tablePanel. addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override
+			public void propertyChange(java.beans.PropertyChangeEvent e){if("bord\u0065r".equals(e.getPropertyName(
+			)))throw new RuntimeException();}});
 
 			//---- table01 ----
 			table01.setText("Table 1");
@@ -95,15 +106,43 @@ public class SelectStuffFrame extends javax.swing.JFrame {
 
 			//---- table02 ----
 			table02.setText("Table 2");
+			table02.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					table02MouseClicked(e);
+					table02MouseClicked(e);
+					table02MouseClicked(e);
+					table02MouseClicked(e);
+				}
+			});
 
 			//---- table03 ----
 			table03.setText("Table 3");
+			table03.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					table03MouseClicked(e);
+					table03MouseClicked(e);
+				}
+			});
 
 			//---- table04 ----
 			table04.setText("Table 4");
+			table04.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					table03MouseClicked(e);
+				}
+			});
 
 			//---- table05 ----
 			table05.setText("Table 5");
+			table05.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					table03MouseClicked(e);
+				}
+			});
 
 			//---- table06 ----
 			table06.setText("Table 6");
@@ -220,6 +259,9 @@ public class SelectStuffFrame extends javax.swing.JFrame {
 			backButtonActionPerformed(e);
 		});
 
+		//---- textField1 ----
+		textField1.setEditable(false);
+
 		GroupLayout contentPaneLayout = new GroupLayout(contentPane);
 		contentPane.setLayout(contentPaneLayout);
 		contentPaneLayout.setHorizontalGroup(
@@ -228,10 +270,11 @@ public class SelectStuffFrame extends javax.swing.JFrame {
 					.addContainerGap()
 					.addGroup(contentPaneLayout.createParallelGroup()
 						.addComponent(jButton1)
-						.addComponent(backButton))
-					.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+						.addComponent(backButton)
+						.addComponent(textField1, GroupLayout.Alignment.TRAILING))
+					.addGap(18, 18, 18)
 					.addComponent(tablePanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(95, Short.MAX_VALUE))
+					.addContainerGap(89, Short.MAX_VALUE))
 		);
 		contentPaneLayout.setVerticalGroup(
 			contentPaneLayout.createParallelGroup()
@@ -244,7 +287,9 @@ public class SelectStuffFrame extends javax.swing.JFrame {
 							.addContainerGap()
 							.addComponent(backButton)
 							.addGap(24, 24, 24)
-							.addComponent(jButton1)))
+							.addComponent(jButton1)
+							.addGap(18, 18, 18)
+							.addComponent(textField1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		pack();
@@ -258,9 +303,8 @@ public class SelectStuffFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void table01MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table01MouseClicked
-        // TODO add your handling code here:
+	    textField1.setText("Table " + selectedTable);
         selectedTable = 1;
-        System.out.println(selectedTable);
 
 
 
@@ -326,6 +370,6 @@ public class SelectStuffFrame extends javax.swing.JFrame {
 	private JLabel table16;
 	private JLabel table17;
 	private JButton backButton;
-
+	private JTextField textField1;
     // End of variables declaration//GEN-END:variables
 }

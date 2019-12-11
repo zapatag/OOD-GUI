@@ -34,11 +34,15 @@ public class OrderFrame extends JFrame {
 	}
 
 	private void addToOrderActionPerformed(ActionEvent e) {
-		String foodName = textField1.getText();
-		String foodDescription = textField2.getText();
-		Double foodCost = Double.parseDouble(textField3.getText());
-		this.handheldDevice.inputOrder(foodName, foodDescription, foodCost, 1);
+		String foodName = foodNameField.getText();
+		String foodCategory = foodCategoryField.getText();
+		Double foodCost = Double.parseDouble(foodCostField.getText());
+		this.handheldDevice.inputOrder(foodName, foodCategory, foodCost, 1);
 		this.handheldDevice.printOrder();
+
+		foodNameField.setText("");
+		foodCategoryField.setText("");
+		foodCostField.setText("");
 	}
 
 	private void sendOrderActionPerformed(ActionEvent e) {
@@ -57,12 +61,12 @@ public class OrderFrame extends JFrame {
 		// JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
 		// Generated using JFormDesigner Evaluation license - unknown
 		backButton = new JButton();
-		textField1 = new JTextField();
+		foodNameField = new JTextField();
 		label1 = new JLabel();
 		label2 = new JLabel();
-		textField2 = new JTextField();
+		foodCategoryField = new JTextField();
 		label3 = new JLabel();
-		textField3 = new JTextField();
+		foodCostField = new JTextField();
 		button1 = new JButton();
 		button2 = new JButton();
 
@@ -77,20 +81,20 @@ public class OrderFrame extends JFrame {
 			backButtonActionPerformed(e);
 		});
 
-		//---- textField1 ----
-		textField1.addActionListener(e -> textField1ActionPerformed(e));
+		//---- foodNameField ----
+		foodNameField.addActionListener(e -> textField1ActionPerformed(e));
 
 		//---- label1 ----
 		label1.setText("Food Name");
-		label1.setLabelFor(textField1);
+		label1.setLabelFor(foodNameField);
 
 		//---- label2 ----
 		label2.setText("Food Description");
-		label2.setLabelFor(textField2);
+		label2.setLabelFor(foodCategoryField);
 
 		//---- label3 ----
 		label3.setText("Food Cost");
-		label3.setLabelFor(textField3);
+		label3.setLabelFor(foodCostField);
 
 		//---- button1 ----
 		button1.setText("Add to Order");
@@ -119,13 +123,13 @@ public class OrderFrame extends JFrame {
 										.addComponent(label3, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
 									.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
 									.addGroup(contentPaneLayout.createParallelGroup()
-										.addComponent(textField2, GroupLayout.PREFERRED_SIZE, 147, GroupLayout.PREFERRED_SIZE)
-										.addComponent(textField3, GroupLayout.PREFERRED_SIZE, 147, GroupLayout.PREFERRED_SIZE))
+										.addComponent(foodCategoryField, GroupLayout.PREFERRED_SIZE, 147, GroupLayout.PREFERRED_SIZE)
+										.addComponent(foodCostField, GroupLayout.PREFERRED_SIZE, 147, GroupLayout.PREFERRED_SIZE))
 									.addGap(58, 58, 58))
 								.addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
 									.addComponent(label1, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE)
 									.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-									.addComponent(textField1, GroupLayout.PREFERRED_SIZE, 147, GroupLayout.PREFERRED_SIZE)
+									.addComponent(foodNameField, GroupLayout.PREFERRED_SIZE, 147, GroupLayout.PREFERRED_SIZE)
 									.addGap(55, 55, 55))
 								.addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
 									.addGroup(contentPaneLayout.createParallelGroup()
@@ -143,14 +147,14 @@ public class OrderFrame extends JFrame {
 					.addGap(35, 35, 35)
 					.addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 						.addComponent(label1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(foodNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
 					.addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 						.addComponent(label2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(foodCategoryField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
 					.addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-						.addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(foodCostField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(label3, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
 					.addComponent(button1)
@@ -166,12 +170,12 @@ public class OrderFrame extends JFrame {
 	// JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
 	// Generated using JFormDesigner Evaluation license - unknown
 	private JButton backButton;
-	private JTextField textField1;
+	private JTextField foodNameField;
 	private JLabel label1;
 	private JLabel label2;
-	private JTextField textField2;
+	private JTextField foodCategoryField;
 	private JLabel label3;
-	private JTextField textField3;
+	private JTextField foodCostField;
 	private JButton button1;
 	private JButton button2;
 	// JFormDesigner - End of variables declaration  //GEN-END:variables

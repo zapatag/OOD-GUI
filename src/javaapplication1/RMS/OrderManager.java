@@ -13,8 +13,14 @@ public class OrderManager {
 		orderQueue.remove();
 	}
 
-	static void completeOrder(Order order){
+	public Order peek(){
+		return orderQueue.peek();
+	}
+
+	public void completeOrder(){
+		Order order = this.orderQueue.peek();
 		order.completeOrder();
+		removeFromOrderQueue();
 	}
 
 	public String printAllOrders(){

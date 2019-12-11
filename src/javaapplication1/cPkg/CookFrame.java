@@ -8,6 +8,7 @@ package javaapplication1.cPkg;
 
 import java.awt.event.*;
 import javaapplication1.RMS1;
+import javaapplication1.wPkg.WaiterFrame;
 
 import javaapplication1.RMS.*;
 import javax.swing.*;
@@ -24,23 +25,27 @@ public class CookFrame extends javax.swing.JFrame {
      * Creates new form CookFrame
      */
 	private void completedTopOrderActionPerformed(ActionEvent e) {
-		this.orderManager.removeFromOrderQueue();
+		orderManager.removeFromOrderQueue();
 		textArea1.setText(orderManager.printAllOrders());
 	}
 
 	private void completeOrderActionPerformed(ActionEvent e) {
-		// TODO add your code here
-        if (textArea1.getText() != null){
-            JOptionPane.showMessageDialog(new JFrame(), "Queue is not empty!", "ERROR", JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            
-        }
+        Order order = orderManager.peek();
+        Notification notification = new Notification(order);
+        orderManager.completeOrder();
+
+        HandheldDevice handheldDevice = new HandheldDevice();
+
+
+        new WaiterFrame(handheldDevice, notification).setVisible(true);
+        this.dispose();
+
 	}
 
     public CookFrame(OrderManager orderManager) {
 	    this.orderManager = orderManager;
         initComponents(orderManager);
+
     }
 
     /**

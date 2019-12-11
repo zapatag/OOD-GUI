@@ -5,7 +5,9 @@
  */
 package javaapplication1.wPkg;
 
+import java.awt.event.*;
 import javaapplication1.RMS.HandheldDevice;
+import javaapplication1.RMS.Notification;
 import javaapplication1.RMS1;
 import javaapplication1.RMS1;
 import javax.swing.*;
@@ -18,12 +20,23 @@ import javax.swing.GroupLayout;
 public class WaiterFrame extends javax.swing.JFrame {
 
     private HandheldDevice handheldDevice;
+    private Notification notification;
     /**
      * Creates new form WaiterFrame
      */
     public WaiterFrame(HandheldDevice handheldDevice) {
         this.handheldDevice = handheldDevice;
         initComponents();
+    }
+
+	private void button1ActionPerformed(ActionEvent e) {
+		textArea1.setText("");
+	}
+
+    public WaiterFrame(HandheldDevice handheldDevice, Notification notification){
+		this.handheldDevice = handheldDevice;
+		this.notification = notification;
+		initComponents();
     }
 
     /**
@@ -37,6 +50,15 @@ public class WaiterFrame extends javax.swing.JFrame {
 	private void initComponents() {
 		handleOrder = new JToggleButton();
 		back = new JButton();
+		scrollPane1 = new JScrollPane();
+	    if (this.notification == null){
+		    textArea1 = new JTextArea();
+	    }
+	    else {
+		    textArea1 = new JTextArea(this.notification.getNotification());
+	    }
+		label1 = new JLabel();
+		button1 = new JButton();
 
 		//======== this ========
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -50,28 +72,58 @@ public class WaiterFrame extends javax.swing.JFrame {
 		back.setText("Back");
 		back.addActionListener(e -> backActionPerformed(e));
 
+		//======== scrollPane1 ========
+		{
+			scrollPane1.setViewportView(textArea1);
+		}
+
+		//---- label1 ----
+		label1.setText("Active Notifications");
+		label1.setLabelFor(textArea1);
+
+		//---- button1 ----
+		button1.setText("Order Delivered");
+		button1.addActionListener(e -> {
+			button1ActionPerformed(e);
+			button1ActionPerformed(e);
+		});
+
 		GroupLayout contentPaneLayout = new GroupLayout(contentPane);
 		contentPane.setLayout(contentPaneLayout);
 		contentPaneLayout.setHorizontalGroup(
 			contentPaneLayout.createParallelGroup()
-				.addGroup(contentPaneLayout.createSequentialGroup()
-					.addGroup(contentPaneLayout.createParallelGroup()
+				.addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
 						.addGroup(contentPaneLayout.createSequentialGroup()
-							.addGap(130, 130, 130)
-							.addComponent(handleOrder))
+							.addComponent(back)
+							.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+							.addGroup(contentPaneLayout.createParallelGroup()
+								.addComponent(label1)
+								.addGroup(contentPaneLayout.createSequentialGroup()
+									.addGap(175, 175, 175)
+									.addComponent(handleOrder))))
 						.addGroup(contentPaneLayout.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(back)))
-					.addContainerGap(141, Short.MAX_VALUE))
+							.addGap(0, 92, Short.MAX_VALUE)
+							.addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+								.addComponent(button1)
+								.addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 280, GroupLayout.PREFERRED_SIZE))))
+					.addGap(20, 20, 20))
 		);
 		contentPaneLayout.setVerticalGroup(
 			contentPaneLayout.createParallelGroup()
 				.addGroup(contentPaneLayout.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(back)
-					.addGap(84, 84, 84)
-					.addComponent(handleOrder)
-					.addContainerGap(154, Short.MAX_VALUE))
+					.addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+						.addComponent(back)
+						.addComponent(handleOrder))
+					.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(label1)
+					.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+					.addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 147, GroupLayout.PREFERRED_SIZE)
+					.addGap(18, 18, 18)
+					.addComponent(button1)
+					.addGap(9, 9, 9))
 		);
 		pack();
 		setLocationRelativeTo(getOwner());
@@ -128,5 +180,9 @@ public class WaiterFrame extends javax.swing.JFrame {
 	// Generated using JFormDesigner Evaluation license - unknown
 	private JToggleButton handleOrder;
 	private JButton back;
+	private JScrollPane scrollPane1;
+	private JTextArea textArea1;
+	private JLabel label1;
+	private JButton button1;
     // End of variables declaration//GEN-END:variables
 }

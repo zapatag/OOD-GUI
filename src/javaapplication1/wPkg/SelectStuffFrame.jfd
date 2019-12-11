@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :::p, par l {comp jButton1:::p::p, comp backButton::l:p::p}, space u:::p, comp tablePanel:::p::p, space ::95:x}}"
-			"$verticalGroup": "par l {seq {par l {seq {space :p:21:p, comp tablePanel:::p::p}, seq l {space :::p, comp backButton:::p::p, space :p:24:p, comp jButton1:::p::p}}, space :::x}}"
+			"$horizontalGroup": "par l {seq l {space :::p, par l {comp jButton1:::p::p, comp backButton::l:p::p, comp textField1::t:::x}, space s:::p, comp tablePanel:::p::p, space ::89:x}}"
+			"$verticalGroup": "par l {seq {par l {seq {space :p:21:p, comp tablePanel:::p::p}, seq l {space :::p, comp backButton:::p::p, space :p:24:p, comp jButton1:::p::p, space s:::p, comp textField1:::::p}}, space :::x}}"
 		} ) {
 			name: "this"
 			"defaultCloseOperation": 3
@@ -27,18 +27,26 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "table02"
 					"text": "Table 2"
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "table02MouseClicked", true ) )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "table02MouseClicked", true ) )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "table02MouseClicked", true ) )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "table02MouseClicked", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "table03"
 					"text": "Table 3"
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "table03MouseClicked", true ) )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "table03MouseClicked", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "table04"
 					"text": "Table 4"
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "table03MouseClicked", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "table05"
 					"text": "Table 5"
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "table03MouseClicked", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "table06"
@@ -94,6 +102,10 @@ new FormModel {
 				"text": "Back"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "backButtonActionPerformed", true ) )
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "backButtonActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+				"editable": false
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"size": new java.awt.Dimension( 400, 300 )

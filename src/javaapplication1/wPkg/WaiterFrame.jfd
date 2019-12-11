@@ -1,0 +1,26 @@
+JFDML JFormDesigner: "7.0.0.6.255" Java: "1.8.0_202-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq l {space :p:130:p, comp handleOrder:::p::p}, seq l {space :::p, comp back:::p::p}}, space ::141:x}}"
+			"$verticalGroup": "par l {seq l {space :::p, comp back:::p::p, space :p:84:p, comp handleOrder:::p::p, space ::154:x}}"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 3
+			add( new FormComponent( "javax.swing.JToggleButton" ) {
+				name: "handleOrder"
+				"text": "Handle Order"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "handleOrderActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "back"
+				"text": "Back"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "backActionPerformed", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}

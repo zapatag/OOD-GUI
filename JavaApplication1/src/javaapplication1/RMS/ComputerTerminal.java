@@ -1,7 +1,11 @@
 package RMS;
 
 public class ComputerTerminal {
-	public void completeOrder(Order order){
+	static void completeOrder(Order order){
 		OrderManager.completeOrder(order);
+	}
+
+	public void makeOrder(Order order){
+		Cook.makeOrder(order);
 	}
 }

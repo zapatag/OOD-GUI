@@ -21,7 +21,8 @@ public class HandheldDevice {
 	}
 
 	public void inputOrder(String foodName, String foodCategory, double foodCost, int quantity){
-		this.order.createFoodItem(foodName, foodCost, foodCategory);
+		FoodItem foodItem = this.order.createFoodItem(foodName, foodCost, foodCategory);
+		this.order.addFoodItem(foodItem);
 	}
 
 	public void notifyWaiter(){

@@ -26,9 +26,7 @@ public class Cook {
 		this.hourlyWage = hourlyWage;
 	}
 
-	public void makeOrder(Order order) {
-		if (order.isComplete()) {
-			order.completeOrder();
-		}
+	static void makeOrder(Order order) {
+		ComputerTerminal.completeOrder(order);
 	}
 }

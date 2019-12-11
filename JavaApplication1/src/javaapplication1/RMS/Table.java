@@ -1,6 +1,9 @@
-package RMS;
+package javaapplication1.RMS;
+
+import javaapplication1.wPkg.SelectStuffFrame;
 
 public class Table {
+        
 	private int tableNum;
 	private String tableStatus;
 

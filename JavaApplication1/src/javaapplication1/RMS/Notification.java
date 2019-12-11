@@ -1,4 +1,4 @@
-package RMS;
+package javaapplication1.RMS;
 
 public class Notification {
 	private Order order;

@@ -1,4 +1,4 @@
-package RMS;
+package javaapplication1.RMS;
 import java.util.LinkedList;
 import java.util.Queue;
 

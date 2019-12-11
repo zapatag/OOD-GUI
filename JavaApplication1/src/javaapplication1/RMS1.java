@@ -6,7 +6,11 @@
 package javaapplication1;
 
 import static java.awt.SystemColor.desktop;
-import javaapplication1.acctFrames.acctFrame;
+import javaapplication1.bPkg.BusBoyFrame;
+import javaapplication1.cPkg.CookFrame;
+import javaapplication1.hPkg.HostFrame;
+import javaapplication1.mPkg.ManagerFrame;
+import javaapplication1.wPkg.WaiterFrame;
 
 /**
  *
@@ -32,12 +36,18 @@ public class RMS1 extends javax.swing.JFrame {
 
         desktop = new javax.swing.JDesktopPane();
         loginT = new javax.swing.JMenuBar();
-        Exit = new javax.swing.JMenu();
+        nullExit = new javax.swing.JMenu();
         exit = new javax.swing.JMenuItem();
         login = new javax.swing.JMenu();
-        acct = new javax.swing.JMenuItem();
+        manager = new javax.swing.JMenuItem();
+        waiter = new javax.swing.JMenuItem();
+        cook = new javax.swing.JMenuItem();
+        host = new javax.swing.JMenuItem();
+        busBoy = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        desktop.setBackground(new java.awt.Color(51, 51, 51));
 
         javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
         desktop.setLayout(desktopLayout);
@@ -50,10 +60,13 @@ public class RMS1 extends javax.swing.JFrame {
             .addGap(0, 315, Short.MAX_VALUE)
         );
 
-        Exit.setText("Exit");
-        Exit.addActionListener(new java.awt.event.ActionListener() {
+        loginT.setBackground(new java.awt.Color(255, 255, 0));
+        loginT.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        nullExit.setText("Exit");
+        nullExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ExitActionPerformed(evt);
+                nullExitActionPerformed(evt);
             }
         });
 
@@ -63,9 +76,9 @@ public class RMS1 extends javax.swing.JFrame {
                 exitActionPerformed(evt);
             }
         });
-        Exit.add(exit);
+        nullExit.add(exit);
 
-        loginT.add(Exit);
+        loginT.add(nullExit);
 
         login.setText("Login");
         login.addActionListener(new java.awt.event.ActionListener() {
@@ -74,13 +87,45 @@ public class RMS1 extends javax.swing.JFrame {
             }
         });
 
-        acct.setText("someAcct");
-        acct.addActionListener(new java.awt.event.ActionListener() {
+        manager.setText("Manager");
+        manager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                acctActionPerformed(evt);
+                managerActionPerformed(evt);
             }
         });
-        login.add(acct);
+        login.add(manager);
+
+        waiter.setText("Waiter");
+        waiter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                waiterActionPerformed(evt);
+            }
+        });
+        login.add(waiter);
+
+        cook.setText("Cook");
+        cook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cookActionPerformed(evt);
+            }
+        });
+        login.add(cook);
+
+        host.setText("Host");
+        host.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hostActionPerformed(evt);
+            }
+        });
+        login.add(host);
+
+        busBoy.setText("BusBoy");
+        busBoy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                busBoyActionPerformed(evt);
+            }
+        });
+        login.add(busBoy);
 
         loginT.add(login);
 
@@ -100,31 +145,52 @@ public class RMS1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
+    private void nullExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nullExitActionPerformed
         // TODO add your handling code here:
-        System.out.print("We made it!");
         System.exit(0);
-    }//GEN-LAST:event_ExitActionPerformed
+    }//GEN-LAST:event_nullExitActionPerformed
+
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_exitActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
-        acctFrame a = new acctFrame();
+        ManagerFrame a = new ManagerFrame();
         desktop.add(a);
         a.setVisible(true);
     }//GEN-LAST:event_loginActionPerformed
 
-    private void acctActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acctActionPerformed
+    private void managerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managerActionPerformed
         // TODO add your handling code here:
-        acctFrame a = new acctFrame();
-        desktop.add(a);
-        a.setVisible(true);
-    }//GEN-LAST:event_acctActionPerformed
+        new ManagerFrame().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_managerActionPerformed
 
-    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+    private void waiterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_waiterActionPerformed
         // TODO add your handling code here:
-        System.out.print("We made it!");
-        System.exit(0);
-    }//GEN-LAST:event_exitActionPerformed
+        new WaiterFrame().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_waiterActionPerformed
+
+    private void cookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookActionPerformed
+        // TODO add your handling code here:
+        new CookFrame().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_cookActionPerformed
+
+    private void hostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hostActionPerformed
+        // TODO add your handling code here:
+        new HostFrame().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_hostActionPerformed
+
+    private void busBoyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busBoyActionPerformed
+        // TODO add your handling code here:
+        new BusBoyFrame().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_busBoyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,11 +228,15 @@ public class RMS1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu Exit;
-    private javax.swing.JMenuItem acct;
+    private javax.swing.JMenuItem busBoy;
+    private javax.swing.JMenuItem cook;
     private javax.swing.JDesktopPane desktop;
     private javax.swing.JMenuItem exit;
+    private javax.swing.JMenuItem host;
     private javax.swing.JMenu login;
     private javax.swing.JMenuBar loginT;
+    private javax.swing.JMenuItem manager;
+    private javax.swing.JMenu nullExit;
+    private javax.swing.JMenuItem waiter;
     // End of variables declaration//GEN-END:variables
 }

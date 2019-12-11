@@ -1,0 +1,115 @@
+JFDML JFormDesigner: "7.0.0.6.255" Java: "1.8.0_202-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :::p, par l {comp jButton1:::p::p, comp backButton::l:p::p, comp textField1::t:::x}, space s:::p, comp tablePanel:::p::p, space ::89:x}}"
+			"$verticalGroup": "par l {seq {par l {seq {space :p:21:p, comp tablePanel:::p::p}, seq l {space :::p, comp backButton:::p::p, space :p:24:p, comp jButton1:::p::p, space s:::p, comp textField1:::::p}}, space :::x}}"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 3
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "jButton1"
+				"text": "Select table"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButton1ActionPerformed", true ) )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq t {par l {comp table09:::p::p, seq {par l {comp table08::l:p::p, comp table07::l:p::p, comp table01::l:p::p, comp table02::l:p::p, comp table03::l:p::p, comp table04::l:p::p, comp table05::l:p::p, comp table06::l:p::p}, space :p:72:p, par l {comp table11:::p::p, comp table17:::p::p, comp table16:::p::p, comp table15:::p::p, comp table14:::p::p, comp table13:::p::p, comp table12:::p::p, comp table10:::p::p}}}, space ::37:x}}"
+				"$verticalGroup": "par l {seq l {space :::p, par t {seq {comp table13:::p::p, space s:::p, comp table14:::p::p, space s:::p, comp table15:::p::p, space s:::p, comp table16:::p::p, space s:::p, comp table17:::p::p}, seq {par b {comp table01::b:p::p, comp table10::b:p::p}, space :p:14:p, par b {comp table02::b:p::p, comp table11::b:p::p}, space s:::p, par b {comp table03::b:p::p, comp table12::b:p::p}, space :p:22:p, comp table04:::p::p, space s:::p, comp table05:::p::p, space s:::p, comp table06:::p::p, space :p:18:p, comp table07:::p::p, space :p:18:p, comp table08:::p::p}}, space s:::p, comp table09:::p::p, space ::66:x}}"
+			} ) {
+				name: "tablePanel"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "table01"
+					"text": "Table 1"
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "table01MouseClicked", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "table02"
+					"text": "Table 2"
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "table02MouseClicked", true ) )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "table02MouseClicked", true ) )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "table02MouseClicked", true ) )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "table02MouseClicked", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "table03"
+					"text": "Table 3"
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "table03MouseClicked", true ) )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "table03MouseClicked", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "table04"
+					"text": "Table 4"
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "table03MouseClicked", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "table05"
+					"text": "Table 5"
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "table03MouseClicked", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "table06"
+					"text": "Table 6"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "table07"
+					"text": "Table 7"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "table08"
+					"text": "Table 8"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "table09"
+					"text": "Table 9"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "table10"
+					"text": "Table 10"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "table11"
+					"text": "Table 11"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "table12"
+					"text": "Table 12"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "table13"
+					"text": "Table 13"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "table14"
+					"text": "Table 14"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "table15"
+					"text": "Table 15"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "table16"
+					"text": "Table 16"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "table17"
+					"text": "Table 17"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "backButton"
+				"text": "Back"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "backButtonActionPerformed", true ) )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "backButtonActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+				"editable": false
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"size": new java.awt.Dimension( 400, 300 )
+			"location": new java.awt.Point( 0, 0 )
+		} )
+	}
+}
